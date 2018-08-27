@@ -20,10 +20,14 @@ public class Form {
         createAppointmentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "create clicked");
                 Client newClient = new Client(textName.getName(), Integer.parseInt(textID.getText()));
                 newClient = Client.addClient(newClient);
-                newClient.newAppointment(textDate.getText(), textPet.getText());
+                boolean success = newClient.newAppointment(textDate.getText(), textPet.getText(), textSymptoms.getText());
+
+                if (success)
+                    JOptionPane.showMessageDialog(null, "Appointment created");
+                else
+                    JOptionPane.showMessageDialog(null, "Appointment already exists");
             }
         });
 
@@ -31,7 +35,14 @@ public class Form {
         updateAppointmentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "update clicked");
+                Appointment toUpdate = getAppointment(Integer.parseInt(textID.getText()), textPet.getText(), textDate.getText());
+
+                if (toUpdate == null)
+                    JOptionPane.showMessageDialog(null, "No such appointment");
+                else {
+                    toUpdate.setSymptoms(textSymptoms.getText());
+                    JOptionPane.showMessageDialog(null, "Update successful");
+                }
             }
         });
 
@@ -39,7 +50,14 @@ public class Form {
         deleteAppointmentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "delete clicked");
+                Appointment toDelete = getAppointment(Integer.parseInt(textID.getText()), textPet.getText(), textDate.getText());
+
+                if (toDelete == null)
+                    JOptionPane.showMessageDialog(null, "No such appointment");
+                else {
+//                    for (Client client: Integer.parseInt(textName.getText()){}
+                    JOptionPane.showMessageDialog(null, "Delete successful");
+                }
             }
         });
 
