@@ -9,11 +9,13 @@ public class Appointment {
         date = _date;
     }
 
-    public String getDate() {
-        return date;
+    Client getClient() { return client; }
+
+    Animal getAnimal() {
+        return animal;
     }
 
-    public String getAnimalName() {
-        return animal.getName();
+    String getDate() {
+        return date;
     }
 }
