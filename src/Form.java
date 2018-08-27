@@ -56,13 +56,13 @@ public class Form {
         for (Client client: Client.getClientsList()) {
             if (client.getId().equals(id)) {
                 for (Appointment appointment: client.getAppointmentArrayList()){
-                    if (appointment.getDate().equals(date) && appointment.getAnimalName().equals(animal)) {
+                    if (appointment.getDate().equals(date) && appointment.getAnimal().getName().equals(animal)) {
                         return appointment;
                     }
                 }
             }
         }
-        
+
         return null;
     }
 
