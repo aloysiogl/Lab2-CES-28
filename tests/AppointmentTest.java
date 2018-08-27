@@ -18,5 +18,12 @@ public class AppointmentTest {
         assertEquals(appointment.getClient().getId(), (Integer) 101);
         assertEquals(appointment.getAnimal().getName(), "charlie");
         assertEquals(appointment.getDate(), "12/10/97");
+        assertEquals(appointment.getSymptoms(), "symptoms");
+    }
+
+    @Test
+    public void testSymptomsString() {
+        appointment.setSymptoms("newsymptoms");
+        assertEquals(appointment.getSymptoms(), "newsymptoms");
     }
 }
