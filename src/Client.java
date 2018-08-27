@@ -68,4 +68,8 @@ public class Client {
         return client;
     }
 
+    static ArrayList<Client> getClientsList(){
+        return clientArrayList;
+    }
+
 }

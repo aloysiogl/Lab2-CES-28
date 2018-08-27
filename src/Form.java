@@ -52,7 +52,19 @@ public class Form {
         });
     }
 
-    
+    Appointment getAppointment(Integer id, String animal, String date){
+        for (Client client: Client.getClientsList()) {
+            if (client.getId().equals(id)) {
+                for (Appointment appointment: client.getAppointmentArrayList()){
+                    if (appointment.getDate().equals(date) && appointment.getAnimalName().equals(animal)) {
+                        return appointment;
+                    }
+                }
+            }
+        }
+        
+        return null;
+    }
 
     public static void main(String[] args){
         frame = new JFrame("Dog mania \uD83D\uDC15");
