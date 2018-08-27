@@ -5,7 +5,13 @@ import java.awt.event.ActionListener;
 public class Form {
     private JButton button1;
     private JPanel mainPanel;
+    private JButton updateAppointmentButton;
     private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JTextField textField4;
+    private JButton deleteAppointmentButton;
+    private JTextArea textArea1;
 
     public Form() {
 
@@ -18,7 +24,7 @@ public class Form {
     }
 
     public static void main(String[] args){
-        JFrame frame = new JFrame("Form");
+        JFrame frame = new JFrame("Formsda");
         frame.setContentPane(new Form().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
