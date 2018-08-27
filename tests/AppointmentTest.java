@@ -8,7 +8,8 @@ public class AppointmentTest {
 
     @Before
     public void setUp() throws Exception {
-        appointment = new Appointment(new Client("davi", 101), new Animal("charlie"), "12/10/97");
+        appointment = new Appointment(new Client("davi", 101), new Animal("charlie"), "12/10/97",
+                "symptoms");
     }
 
     @Test

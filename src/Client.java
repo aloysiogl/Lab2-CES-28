@@ -16,9 +16,15 @@ public class Client {
         animalList = new LinkedList<>();
     }
 
-    void newAppointment(String date, String animal) {
+    boolean newAppointment(String date, String animal, String symptoms) {
         boolean hasAnimal = false;
         Animal animalObject = null;
+
+        for (Appointment appointment : appointmentArrayList) {
+            if (appointment.getClient().getId().equals(this.getId()) && appointment.getAnimal().getName().equals(animal)
+                    && appointment.getDate().equals(date))
+                return false;
+        }
 
         for (Animal anAnimal : animalList) {
             if (animal.equals(anAnimal.getName())) {
@@ -33,8 +39,9 @@ public class Client {
             animalList.add(animalObject);
         }
 
-        Appointment appointment = new Appointment(this, animalObject, date);
+        Appointment appointment = new Appointment(this, animalObject, date, symptoms);
         appointmentArrayList.add(appointment);
+        return true;
     }
 
     void deleteAppointment(String date) {
@@ -68,7 +75,7 @@ public class Client {
         return client;
     }
 
-    static ArrayList<Client> getClientsList(){
+    static ArrayList<Client> getClientsList() {
         return clientArrayList;
     }
 
