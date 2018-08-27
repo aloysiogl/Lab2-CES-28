@@ -35,6 +35,8 @@ public class ClientTest {
 
         assertEquals(client.getAppointmentArrayList().get(0).getDate(), "20/10/97");
         assertEquals(client.getAppointmentArrayList().get(0).getAnimal().getName(), "charlie");
+
+        assertFalse(client.newAppointment("20/10/97", "charlie", "symptoms"));
     }
 
     @Test
