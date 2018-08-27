@@ -22,7 +22,7 @@ public class Form {
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null, "create clicked");
                 Client newClient = new Client(textName.getName(), Integer.parseInt(textID.getText()));
-                Client.addClient(newClient);
+                newClient = Client.addClient(newClient);
                 newClient.newAppointment(textDate.getText(), textPet.getText());
             }
         });
@@ -51,6 +51,8 @@ public class Form {
             }
         });
     }
+
+    
 
     public static void main(String[] args){
         frame = new JFrame("Dog mania \uD83D\uDC15");
