@@ -6,7 +6,8 @@ public class Client {
     private String name;
     private Integer id;
     private ArrayList<Appointment> appointmentArrayList;
-    private List<Animal> animalList;
+    private List<Animal> animalList = new ArrayList<>();
+    private static ArrayList<Client> clientArrayList = new ArrayList<>();
 
     public Client(String _name, Integer _id) {
         id = _id;
@@ -18,14 +19,18 @@ public class Client {
     public void newAppointment(String date, String animal) {
         boolean hasAnimal = false;
         Animal animalObject = null;
+        System.out.println("aqui1");
 
         for (Animal anAnimal : animalList) {
             if (animal.equals(anAnimal.getName())) {
                 hasAnimal = true;
                 animalObject = anAnimal;
+                System.out.println("aqui2");
                 break;
             }
         }
+
+        System.out.println("aqui3");
 
         if (!hasAnimal) {
             animalObject = new Animal(animal);
@@ -55,6 +60,10 @@ public class Client {
 
     public ArrayList<Appointment> getAppointmentArrayList() {
         return appointmentArrayList;
+    }
+
+    static void addClient(Client client){
+        //TODO: implement
     }
 
 }

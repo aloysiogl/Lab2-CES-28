@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class Form {
     private JButton createAppointmentButton;
@@ -12,15 +13,17 @@ public class Form {
     private JButton deleteAppointmentButton;
     private JTextArea textSymptoms;
     static private JFrame frame;
+    private ArrayList<Client> clientArrayList;
 
-    public Form() {
+    private Form() {
         //Actions performed when create appointment is clicked
         createAppointmentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null, "create clicked");
-
-                System.out.println("ola");
+                Client newClient = new Client(textName.getName(), Integer.parseInt(textID.getText()));
+                Client.addClient(newClient);
+                newClient.newAppointment(textDate.getText(), textPet.getText());
             }
         });
 
