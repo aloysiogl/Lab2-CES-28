@@ -13,7 +13,23 @@ public class Client {
     }
 
     public void newAppointment(String date, String animal){
-        Appointment appointment(this, animal, date);
+        boolean hasAnimal = false;
+        Animal animalObject = null;
+
+        for (Animal anAnimal : animalList) {
+            if (animal.equals(anAnimal.getName())) {
+                hasAnimal = true;
+                animalObject = anAnimal;
+                break;
+            }
+        }
+
+        if (!hasAnimal) {
+            animalObject = new Animal(animal);
+            animalList.add(animalObject);
+        }
+
+        Appointment appointment = new Appointment(this, animalObject, date);
         appointmentArrayList.add(appointment);
     }
 

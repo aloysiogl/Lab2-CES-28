@@ -19,6 +19,8 @@ public class Form {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null, "create clicked");
+
+                System.out.println("ola");
             }
         });
 
