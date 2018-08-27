@@ -27,7 +27,7 @@ public class Appointment {
             validDate = false;
         else if (_date.charAt(7) < '0' || '9' < _date.charAt(7))
             validDate = false;
-        else if (!validDate)
+        if (!validDate)
             throw new java.lang.RuntimeException("Invalid date format");
 
         client = _client;
@@ -53,6 +53,9 @@ public class Appointment {
     }
 
     void setSymptoms(String _symptoms) {
+        if (_symptoms == null || _symptoms.isEmpty())
+            throw new java.lang.RuntimeException("No symptoms were informed");
+
         this.symptoms = _symptoms;
     }
 }

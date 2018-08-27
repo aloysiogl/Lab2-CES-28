@@ -7,11 +7,11 @@ public class Client {
     private String name;
     private Integer id;
     private ArrayList<Appointment> appointmentArrayList;
-    private List<Animal> animalList = new ArrayList<>();
+    private List<Animal> animalList;
     private static ArrayList<Client> clientArrayList = new ArrayList<>();
 
     public Client(String _name, Integer _id) {
-        if (_name == null) {
+        if (_name == null || _name.isEmpty()) {
             throw new java.lang.RuntimeException("Empty client's name");
         }
 

@@ -55,25 +55,9 @@
           <text value="Pet name:"/>
         </properties>
       </component>
-      <component id="bb2d5" class="javax.swing.JTextField" binding="textName">
-        <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="220" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
       <component id="ae93a" class="javax.swing.JTextField" binding="textID">
         <constraints>
           <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="91b54" class="javax.swing.JTextField" binding="textPet">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
@@ -126,6 +110,22 @@
           <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
         </constraints>
       </vspacer>
+      <component id="91b54" class="javax.swing.JTextField" binding="textPet">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="bb2d5" class="javax.swing.JTextField" binding="textName">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="220" height="-1"/>
+          </grid>
+        </constraints>
+        <properties/>
+      </component>
     </children>
   </grid>
 </form>
