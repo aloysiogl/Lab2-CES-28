@@ -10,6 +10,9 @@ public class Client {
     private static ArrayList<Client> clientArrayList = new ArrayList<>();
 
     public Client(String _name, Integer _id) {
+        if (_name.isEmpty())
+            throw new java.lang.RuntimeException("Empty client's name");
+
         id = _id;
         name = _name;
         appointmentArrayList = new ArrayList<>();
