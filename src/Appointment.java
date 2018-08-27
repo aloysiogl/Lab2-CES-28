@@ -13,21 +13,21 @@ public class Appointment {
         boolean validDate = true;
         if (_date.length() != 8)
             validDate = false;
-        if (_date.charAt(2) != '/' || _date.charAt(5) != '/')
+        else if (_date.charAt(2) != '/' || _date.charAt(5) != '/')
             validDate = false;
-        if (_date.charAt(0) < '0' || '9' < _date.charAt(0))
+        else if (_date.charAt(0) < '0' || '9' < _date.charAt(0))
             validDate = false;
-        if (_date.charAt(1) < '0' || '9' < _date.charAt(1))
+        else if (_date.charAt(1) < '0' || '9' < _date.charAt(1))
             validDate = false;
-        if (_date.charAt(3) < '0' || '9' < _date.charAt(3))
+        else if (_date.charAt(3) < '0' || '9' < _date.charAt(3))
             validDate = false;
-        if (_date.charAt(4) < '0' || '9' < _date.charAt(4))
+        else if (_date.charAt(4) < '0' || '9' < _date.charAt(4))
             validDate = false;
-        if (_date.charAt(6) < '0' || '9' < _date.charAt(6))
+        else if (_date.charAt(6) < '0' || '9' < _date.charAt(6))
             validDate = false;
-        if (_date.charAt(7) < '0' || '9' < _date.charAt(7))
+        else if (_date.charAt(7) < '0' || '9' < _date.charAt(7))
             validDate = false;
-        if (!validDate)
+        else if (!validDate)
             throw new java.lang.RuntimeException("Invalid date format");
 
         client = _client;
