@@ -1,3 +1,4 @@
+import javax.annotation.processing.SupportedSourceVersion;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,8 +11,10 @@ public class Client {
     private static ArrayList<Client> clientArrayList = new ArrayList<>();
 
     public Client(String _name, Integer _id) {
-        if (_name == null || _name.isEmpty())
+        System.out.println(_id);
+        if (_name == null) {
             throw new java.lang.RuntimeException("Empty client's name");
+        }
 
         id = _id;
         name = _name;

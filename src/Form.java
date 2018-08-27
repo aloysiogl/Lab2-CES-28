@@ -21,7 +21,7 @@ public class Form {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    Client newClient = new Client(textName.getName(), Integer.parseInt(textID.getText()));
+                    Client newClient = new Client(textName.getText(), Integer.parseInt(textID.getText()));
                     newClient = Client.addClient(newClient);
                     boolean success = newClient.newAppointment(textDate.getText(), textPet.getText(), textSymptoms.getText());
 
@@ -29,8 +29,10 @@ public class Form {
                         JOptionPane.showMessageDialog(null, "Appointment created");
                     else
                         JOptionPane.showMessageDialog(null, "Appointment already exists");
-                } catch (Exception NumberFormatException){
+                } catch (NumberFormatException except){
                     JOptionPane.showMessageDialog(null, "Invalid ID format");
+                } catch (Exception except) {
+                    JOptionPane.showMessageDialog(null, except.getMessage());
                 }
             }
         });
