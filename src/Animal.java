@@ -1,11 +1,11 @@
-public class Animal {
+class Animal {
     private String name;
 
-    public Animal(String _name){
+    Animal(String _name) {
         name = _name;
     }
 
-    public String getName(){
+    String getName() {
         return this.name;
     }
 }
