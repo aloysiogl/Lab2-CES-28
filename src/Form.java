@@ -20,14 +20,18 @@ public class Form {
         createAppointmentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Client newClient = new Client(textName.getName(), Integer.parseInt(textID.getText()));
-                newClient = Client.addClient(newClient);
-                boolean success = newClient.newAppointment(textDate.getText(), textPet.getText(), textSymptoms.getText());
+                try {
+                    Client newClient = new Client(textName.getName(), Integer.parseInt(textID.getText()));
+                    newClient = Client.addClient(newClient);
+                    boolean success = newClient.newAppointment(textDate.getText(), textPet.getText(), textSymptoms.getText());
 
-                if (success)
-                    JOptionPane.showMessageDialog(null, "Appointment created");
-                else
-                    JOptionPane.showMessageDialog(null, "Appointment already exists");
+                    if (success)
+                        JOptionPane.showMessageDialog(null, "Appointment created");
+                    else
+                        JOptionPane.showMessageDialog(null, "Appointment already exists");
+                } catch (Exception NumberFormatException){
+                    JOptionPane.showMessageDialog(null, "Invalid ID format");
+                }
             }
         });
 
@@ -55,7 +59,11 @@ public class Form {
                 if (toDelete == null)
                     JOptionPane.showMessageDialog(null, "No such appointment");
                 else {
-//                    for (Client client: Integer.parseInt(textName.getText()){}
+                    for (Client client: Client.getClientsList()){
+                        if (Integer.parseInt(textID.getText()) == client.getId()){
+                            client.deleteAppointment(toDelete.getDate());
+                        }
+                    }
                     JOptionPane.showMessageDialog(null, "Delete successful");
                 }
             }
