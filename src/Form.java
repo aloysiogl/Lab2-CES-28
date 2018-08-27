@@ -41,13 +41,17 @@ public class Form {
         updateAppointmentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Appointment toUpdate = getAppointment(Integer.parseInt(textID.getText()), textPet.getText(), textDate.getText());
+                try {
+                    Appointment toUpdate = getAppointment(Integer.parseInt(textID.getText()), textPet.getText(), textDate.getText());
 
-                if (toUpdate == null)
+                    if (toUpdate == null)
+                        JOptionPane.showMessageDialog(null, "No such appointment");
+                    else {
+                        toUpdate.setSymptoms(textSymptoms.getText());
+                        JOptionPane.showMessageDialog(null, "Update successful");
+                    }
+                } catch (Exception except){
                     JOptionPane.showMessageDialog(null, "No such appointment");
-                else {
-                    toUpdate.setSymptoms(textSymptoms.getText());
-                    JOptionPane.showMessageDialog(null, "Update successful");
                 }
             }
         });
