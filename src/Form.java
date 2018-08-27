@@ -1,30 +1,54 @@
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 
 public class Form {
-    private JButton button1;
+    private JButton createAppointmentButton;
     private JPanel mainPanel;
     private JButton updateAppointmentButton;
-    private JTextField textField1;
-    private JTextField textField2;
-    private JTextField textField3;
-    private JTextField textField4;
+    private JTextField textName;
+    private JTextField textID;
+    private JTextField textPet;
+    private JTextField textDate;
     private JButton deleteAppointmentButton;
-    private JTextArea textArea1;
+    private JTextArea textSymptoms;
+    static private JFrame frame;
 
     public Form() {
-
-        button1.addActionListener(new ActionListener() {
+        //Actions performed when create appointment is clicked
+        createAppointmentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, textField1.getText());
+                JOptionPane.showMessageDialog(null, "create clicked");
+            }
+        });
+
+        //Actions performed when create appointment is clicked
+        updateAppointmentButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "update clicked");
+            }
+        });
+
+        //Actions performed when create appointment is clicked
+        deleteAppointmentButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "delete clicked");
+            }
+        });
+
+        textSymptoms.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+                super.keyTyped(e);
+                frame.pack();
             }
         });
     }
 
     public static void main(String[] args){
-        JFrame frame = new JFrame("Formsda");
+        frame = new JFrame("Dog mania \uD83D\uDC15");
         frame.setContentPane(new Form().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
